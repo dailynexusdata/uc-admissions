@@ -29,6 +29,7 @@ export default async (container, size, margin) => {
   const legendArea = container
     .append("div")
     .style("display", "flex")
+    .style("flex-wrap", "wrap")
     .style("width", size.width + "px")
     .style("justify-content", "center");
 
