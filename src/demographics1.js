@@ -128,7 +128,7 @@ export default async (container, size, margin) => {
   const textLabels = {
     aa: "Black",
     ai: "American Indian",
-    cl: "Chic anx / Latinx",
+    cl: "Chicanx / Latinx",
     pi: "Pacific Islander",
     asian: "Asian American",
     white: "White",
