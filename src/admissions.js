@@ -10,9 +10,23 @@ export default async (container, totalWidth, size, margin) => {
     .style("margin-bottom", 0)
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif")
     .style("font-weight", "100")
-    .text("UC Campuses Fall Quarter Freshman Admittance");
+    .style("line-spacing", "none")
+    .text("UCSB Freshman Admissions Drop from 2020");
 
-  const data = (await d3.csv("data/admits.csv"))
+  container
+    .append("p")
+    .style("margin", "5px 0 0 0")
+    .text(
+      "Number of students admitted in the fall quarter of 2019-2021 by UC campus."
+    )
+    .style("line-spacing", "none")
+    .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif");
+
+  const data = (
+    await d3.csv(
+      "https://raw.githubusercontent.com/dailynexusdata/uc-admissions/main/data/admits.csv"
+    )
+  )
     .map((d) => {
       return { campus: d.campus, values: d3Collection.entries(d).slice(0, -1) };
     })

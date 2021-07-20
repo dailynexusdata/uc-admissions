@@ -13,7 +13,18 @@ export default async (container, size, margin) => {
     .style("margin-bottom", 0)
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif")
     .style("font-weight", "100")
-    .text("UCSB Admission Demographics vs Rest of UC's");
+    .style("line-spacing", "none")
+    .text("UCSB Freshman Admissions by Race/Ethnicity");
+
+  container
+    .append("p")
+    .style("margin", "5px 0")
+    .style("width", size.width + "px")
+    .text(
+      "Percentage of asian and white admitted freshman fall chicano / latino rises in line with the overall UC trend."
+    )
+    .style("line-spacing", "none")
+    .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif");
 
   const legendArea = container
     .append("div")
@@ -25,7 +36,7 @@ export default async (container, size, margin) => {
     .selectAll("div")
     .data([
       { campus: "sb", name: "UCSB" },
-      { campus: "university", name: "All UC Campuses" },
+      { campus: "university", name: "UC Campuses Average" },
     ])
     .enter()
     .append("div")
@@ -45,9 +56,11 @@ export default async (container, size, margin) => {
     .key((d) => d.eth)
     .key((d) => d.campus)
     .entries(
-      (await d3.csv("data/demographics.csv")).sort((a, b) =>
-        a.eth < b.eth ? -1 : 1
-      )
+      (
+        await d3.csv(
+          "https://raw.githubusercontent.com/dailynexusdata/uc-admissions/main/data/demographics.csv"
+        )
+      ).sort((a, b) => (a.eth < b.eth ? -1 : 1))
     )
     .sort((a, b) =>
       a.key === "z"
@@ -112,7 +125,7 @@ export default async (container, size, margin) => {
     .transition()
     .ease(d3.easeLinear)
     .attr("stroke-dashoffset", 0)
-    .duration(3000);
+    .duration(2500);
 
   const overlay = group
     .selectAll("overlay")
