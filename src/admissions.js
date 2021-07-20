@@ -10,7 +10,7 @@ export default async (container, totalWidth, size, margin) => {
     .style("margin-bottom", 0)
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif")
     .style("font-weight", "100")
-    .style("line-spacing", "none")
+    .style("letter-spacing", "0px")
     .text("UCSB Freshman Admissions Drop from 2020");
 
   container
@@ -19,7 +19,7 @@ export default async (container, totalWidth, size, margin) => {
     .text(
       "Number of students admitted in the fall quarter of 2019-2021 by UC campus."
     )
-    .style("line-spacing", "none")
+    .style("letter-spacing", "0px")
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif");
 
   const data = (
@@ -72,6 +72,7 @@ export default async (container, totalWidth, size, margin) => {
     svg
       .append("text")
       .text(titles[campus.campus])
+      .style("letter-spacing", "0px")
       .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif")
       .style("font-weight", "bold")
       .attr("x", margin.left)
@@ -112,6 +113,7 @@ export default async (container, totalWidth, size, margin) => {
       .data(campus.values)
       .enter()
       .append("text")
+      .style("letter-spacing", "0px")
       .style("user-select", "none")
       .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif")
       // .attr("font-weight", "bold")

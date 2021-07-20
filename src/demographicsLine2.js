@@ -13,7 +13,7 @@ export default async (container, size, margin) => {
     .style("margin-bottom", 0)
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif")
     .style("font-weight", "100")
-    .style("line-spacing", "none")
+    .style("letter-spacing", "0px")
     .text("UCSB Freshman Admissions by Race/Ethnicity");
 
   container
@@ -23,7 +23,7 @@ export default async (container, size, margin) => {
     .text(
       "Percentage of asian and white admitted freshman fall as chicano / latino rises in line with the overall UC trend."
     )
-    .style("line-spacing", "none")
+    .style("letter-spacing", "0px")
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif");
 
   const legendArea = container
@@ -171,6 +171,7 @@ export default async (container, size, margin) => {
 
   group
     .append("text")
+    .style("letter-spacing", "0px")
     .style("user-select", "none")
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif")
     .style("font-weight", "bold")
@@ -231,6 +232,7 @@ export default async (container, size, margin) => {
   lineLabels
     .enter()
     .append("text")
+    .style("letter-spacing", "0px")
     .style("user-select", "none")
     .text((d) => {
       return Math.round(d.pct * 100) + "%";
@@ -262,11 +264,13 @@ export default async (container, size, margin) => {
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif")
     .style("font-size", "16px")
     .attr("color", "#adadad")
+    .style("letter-spacing", "0px")
     .call(
       d3.axisBottom(x).tickFormat((d, i) => d * 100 + (d === 0.4 ? "%" : ""))
     );
   svg
     .append("text")
+    .style("letter-spacing", "0px")
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif")
     .style("font-size", "16px")
     .attr("fill", "#adadad")
