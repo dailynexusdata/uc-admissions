@@ -21,7 +21,7 @@ export default async (container, size, margin) => {
     .style("margin", "5px 0")
     .style("width", size.width + "px")
     .text(
-      "Percentage of asian and white admitted freshman fall chicano / latino rises in line with the overall UC trend."
+      "Percentage of asian and white admitted freshman fall as chicano / latino rises in line with the overall UC trend."
     )
     .style("line-spacing", "none")
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif");
