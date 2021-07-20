@@ -15,14 +15,14 @@ export default async (container, size, margin) => {
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif")
     .style("font-weight", "100")
     .style("letter-spacing", "0px")
-    .text("UCSB Freshman Admissions by Race/Ethnicity");
+    .text("UCSB Calfornia Freshman Admissions by Race/Ethnicity");
 
   container
     .append("p")
     .style("margin", "5px 0")
     .style("width", size.width + "px")
     .text(
-      "Percentage of asian and white admitted freshman fall as chicano / latino rises in line with the overall UC trend."
+      "Percentage of Asian and white admitted freshman fall as Chicanx / Latinx rises in line with the overall UC trend."
     )
     .style("letter-spacing", "0px")
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif");
@@ -126,9 +126,9 @@ export default async (container, size, margin) => {
     .attr("fill", colors.university);
 
   const textLabels = {
-    aa: "African American",
+    aa: "Black",
     ai: "American Indian",
-    cl: "Chicano / Latino",
+    cl: "Chic anx / Latinx",
     pi: "Pacific Islander",
     asian: "Asian American",
     white: "White",
@@ -226,7 +226,7 @@ export default async (container, size, margin) => {
     .style("font-family", "Helvetica Neue, Helvetica, Arial, sans-serif")
     .style("letter-spacing", "0px")
     .html(
-      "<a style='text-decoration: none; color: black' href='https://www.ucop.edu/institutional-research-academic-planning/_files/factsheets/2021/fall-2021-admission-table-2-1.pdf'>Source: University of California freshman admissions 2019-2021.</a>"
+      "<a style='text-decoration: none; color: black' href='https://www.ucop.edu/institutional-research-academic-planning/_files/factsheets/2021/fall-2021-admission-table-2-1.pdf'>Source: University of California California freshman admissions 2019-2021.</a>"
     )
     .style("margin", "5px 0 0 0");
 };
