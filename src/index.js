@@ -5,6 +5,7 @@ import makeAdmissionsPlot from "./admissions";
 import makeDemographicsPlot from "./demographics1";
 
 const update = () => {
+  alert("resize");
   const width = Math.min(600, window.innerWidth - 40);
 
   const admissionsPlot = d3.select("#uc-admissions-admissions-d3");
