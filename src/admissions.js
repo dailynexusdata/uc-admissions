@@ -165,7 +165,7 @@ export default async (container, totalWidth, size, margin) => {
       container.selectAll(".overlay-" + d.campus).attr("fill-opacity", 1);
     });
 
-    svg.on("mouseleave", () => {
+    svg.on("mouseleave touchend touchcancel", () => {
       container.selectAll("[class^='overlay-']").attr("fill-opacity", 0);
     });
 

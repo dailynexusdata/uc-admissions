@@ -2,6 +2,7 @@ import * as d3 from "d3";
 import * as d3Collection from "d3-collection";
 
 export default async (container, size, margin) => {
+  container.style("width", size.width + "px");
   const colors = {
     sb: "#4e79a7",
     university: "#d3d3d399",
@@ -202,11 +203,11 @@ export default async (container, size, margin) => {
     .attr("id", (d) => d.key)
     .attr("fill-opacity", 0);
 
-  overlay.on("mouseenter", function () {
+  overlay.on("mouseenter touchstart", function () {
     const which = d3.select(this).attr("id");
     group.selectAll(".uBarVar" + which).attr("fill-opacity", 1);
   });
-  overlay.on("mouseleave", function () {
+  overlay.on("mouseleave touchend touchcancel", function () {
     group.selectAll("[class^='uBarVar']").attr("fill-opacity", getBarColor);
   });
   svg
