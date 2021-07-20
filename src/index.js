@@ -4,9 +4,16 @@ import makeAdmissionsPlot from "./admissions";
 // import makeDemographicsPlot from "./demographicsLine";
 import makeDemographicsPlot from "./demographics1";
 
+let prevWidth = 0;
+
 const update = () => {
-  alert("resize");
   const width = Math.min(600, window.innerWidth - 40);
+
+  if (Math.abs(prevWidth - width) / width < 0.05) {
+    return;
+  }
+
+  prevWidth = width;
 
   const admissionsPlot = d3.select("#uc-admissions-admissions-d3");
   admissionsPlot.selectAll("*").remove();
