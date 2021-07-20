@@ -4,7 +4,7 @@ import * as d3Collection from "d3-collection";
 export default async (container, size, margin) => {
   const colors = {
     sb: "#005AA3",
-    university: "#d3d3d3dd",
+    university: "#d3d3d3aa",
   };
 
   container

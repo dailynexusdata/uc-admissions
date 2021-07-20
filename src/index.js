@@ -2,7 +2,7 @@ import * as d3 from "d3";
 
 import makeAdmissionsPlot from "./admissions";
 // import makeDemographicsPlot from "./demographicsLine";
-import makeDemographicsPlot from "./demographicsLine2";
+import makeDemographicsPlot from "./demographics1";
 
 const update = () => {
   const width = Math.min(600, window.innerWidth - 40);
@@ -27,7 +27,7 @@ const update = () => {
     { height: 550, width },
     {
       left: 50,
-      right: 35,
+      right: 50,
       top: 30,
       bottom: 80,
     }

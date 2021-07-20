@@ -11,7 +11,7 @@ export default async (container, totalWidth, size, margin) => {
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif")
     .style("font-weight", "100")
     .style("letter-spacing", "0px")
-    .text("UCSB Freshman Admissions Drop from 2020");
+    .text("UCLA and UCSB Freshman Admissions Drop from 2020");
 
   container
     .append("p")
@@ -49,9 +49,12 @@ export default async (container, totalWidth, size, margin) => {
     .y((d) => y(+d.value));
 
   const colors = {
-    sb: "#005AA3",
+    sb: "black",
     university: "#d3d3d3dd",
+    highlight: "#709bff",
   };
+
+  console.log(d3.schemeTableau10);
 
   const titles = {
     berkeley: "Berkeley",
@@ -65,9 +68,14 @@ export default async (container, totalWidth, size, margin) => {
     santacruz: "Santa Cruz",
   };
 
+  d3.selectAll(".admissions-svg").remove();
+
   data.forEach((campus) => {
     const svg = container.append("svg");
-    svg.attr("width", size.width).attr("height", size.height);
+    svg
+      .attr("width", size.width)
+      .attr("height", size.height)
+      .attr("class", "admissions-svg");
 
     svg
       .append("text")
@@ -90,12 +98,16 @@ export default async (container, totalWidth, size, margin) => {
       .attr("d", (d) => line(d.values))
       .attr("stroke-width", (d) => (d.campus === d.selected ? 2 : 1))
       .attr("stroke", (d) =>
-        d.campus === d.selected ? "#005AA3" : "#d3d3d3dd"
+        d.campus === d.selected
+          ? ["sb", "la"].includes(campus.campus)
+            ? colors.highlight
+            : colors.sb
+          : "#d3d3d3dd"
       )
       .attr("fill", "none");
 
     const overlay = svg.append("g");
-
+    console.log(campus);
     overlay
       .selectAll("circs")
       .data(campus.values)
@@ -103,7 +115,10 @@ export default async (container, totalWidth, size, margin) => {
       .append("circle")
       .attr("class", (_, i) => (i !== 2 ? "overlay-" + campus.campus : ""))
       .attr("r", 4)
-      .attr("fill", "#005AA3")
+      .attr(
+        "fill",
+        ["sb", "la"].includes(campus.campus) ? colors.highlight : colors.sb
+      )
       .attr("fill-opacity", (_, i) => +(i === 2))
       .attr("cx", (d) => x(+d.key))
       .attr("cy", (d) => y(+d.value));
@@ -119,7 +134,10 @@ export default async (container, totalWidth, size, margin) => {
       // .attr("font-weight", "bold")
       .attr("class", (_, i) => (i !== 2 ? "overlay-" + campus.campus : ""))
       .text((d) => d3.format(",")(d.value))
-      .attr("fill", "#005AA3")
+      .attr(
+        "fill",
+        ["sb", "la"].includes(campus.campus) ? colors.highlight : colors.sb
+      )
       .attr("fill-opacity", (_, i) => +(i === 2))
       .attr("text-anchor", (d, i) =>
         i === 2 ? "end" : totalWidth === 600 && i == 1 ? "middle" : "start"
@@ -138,8 +156,8 @@ export default async (container, totalWidth, size, margin) => {
       .append("path")
       .attr("d", (d) => line(d.values))
       .attr("stroke-width", 20)
-      .attr("stroke", (d) => "#005AA3")
-      .attr("fill", "#005AA3")
+      .attr("stroke", colors.sb)
+      .attr("fill", colors.sb)
       .attr("stroke-opacity", 0)
       .attr("fill-opacity", 0);
 
