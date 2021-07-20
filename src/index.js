@@ -27,7 +27,7 @@ const update = () => {
     { height: 550, width },
     {
       left: 50,
-      right: 50,
+      right: 60,
       top: 30,
       bottom: 80,
     }
@@ -36,6 +36,6 @@ const update = () => {
 
 window.addEventListener("resize", update);
 
-d3.select("#uc-admissions-admissions-d3").selectAll("*").remove();
-d3.select("#uc-admissions-demographics-d3").selectAll("*").remove();
+// d3.select("#uc-admissions-admissions-d3").selectAll("*").remove();
+// d3.select("#uc-admissions-demographics-d3").selectAll("*").remove();
 update();
