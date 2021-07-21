@@ -22,7 +22,7 @@ export default async (container, size, margin) => {
     .style("margin", "5px 0")
     .style("width", size.width + "px")
     .text(
-      "Percentage of Asian and white admitted freshman fall as Chicanx / Latinx rises in line with the overall UC trend."
+      "Percentage of in-state Asian and white admitted freshman fall as Chicanx / Latinx rises in line with the overall UC trend."
     )
     .style("letter-spacing", "0px")
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif");
