@@ -54,8 +54,6 @@ export default async (container, totalWidth, size, margin) => {
     highlight: "#709bff",
   };
 
-  console.log(d3.schemeTableau10);
-
   const titles = {
     berkeley: "Berkeley",
     davis: "Davis",
@@ -107,7 +105,7 @@ export default async (container, totalWidth, size, margin) => {
       .attr("fill", "none");
 
     const overlay = svg.append("g");
-    console.log(campus);
+
     overlay
       .selectAll("circs")
       .data(campus.values)
@@ -184,7 +182,18 @@ export default async (container, totalWidth, size, margin) => {
     .style("font-family", "Helvetica Neue, Helvetica, Arial, sans-serif")
     .style("letter-spacing", "0px")
     .html(
-      "<a style='text-decoration: none; color: black' href='https://www.ucop.edu/institutional-research-academic-planning/_files/factsheets/2021/fall-2021-admission-table-1-1.pdf'>Source: University of California freshman admissions 2019-2021.</a>"
+      "<a style='text-decoration: none; color: black' href='https://www.ucop.edu/institutional-research-academic-planning/_files/factsheets/2021/fall-2021-admission-table-1-1.pdf'>Source: University of California freshman admissions 2019-21.</a>"
     )
+    .style("font-size", "12pt")
+    .style("line-height", "normal")
+    .style("margin", 0);
+
+  container
+    .append("p")
+    .style("font-size", "12pt")
+    .style("line-height", "normal")
+    .style("font-family", "Helvetica Neue, Helvetica, Arial, sans-serif")
+    .style("letter-spacing", "0px")
+    .html("<i>Chart: Alex Rudolph / Daily Nexus</i>")
     .style("margin", 0);
 };

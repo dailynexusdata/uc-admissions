@@ -15,14 +15,14 @@ export default async (container, size, margin) => {
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif")
     .style("font-weight", "100")
     .style("letter-spacing", "0px")
-    .text("UCSB Calfornia Freshman Admissions by Race/Ethnicity");
+    .text("UCSB California Freshman Admissions by Race/Ethnicity");
 
   container
     .append("p")
     .style("margin", "5px 0")
     .style("width", size.width + "px")
     .text(
-      "Percentage of in-state Asian and white admitted freshman fall as Chicanx / Latinx rises in line with the overall UC trend."
+      "Percentage of in-state Asian and white admitted freshman decreases as Chicanx/Latinx numbers rise in line with the overall UC trend."
     )
     .style("letter-spacing", "0px")
     .style("font-family", "Helvetica Neue,Helvetica,Arial,sans-serif");
@@ -127,7 +127,7 @@ export default async (container, size, margin) => {
 
   const textLabels = {
     aa: "Black",
-    ai: "American Indian",
+    ai: "Native American",
     cl: "Chicanx / Latinx",
     pi: "Pacific Islander",
     asian: "Asian American",
@@ -225,8 +225,19 @@ export default async (container, size, margin) => {
     .append("p")
     .style("font-family", "Helvetica Neue, Helvetica, Arial, sans-serif")
     .style("letter-spacing", "0px")
+    .style("font-size", "12pt")
+    .style("line-height", "normal")
     .html(
-      "<a style='text-decoration: none; color: black' href='https://www.ucop.edu/institutional-research-academic-planning/_files/factsheets/2021/fall-2021-admission-table-2-1.pdf'>Source: University of California California freshman admissions 2019-2021.</a>"
+      "<a style='text-decoration: none; color: black' href='https://www.ucop.edu/institutional-research-academic-planning/_files/factsheets/2021/fall-2021-admission-table-2-1.pdf'>Source: University of California in-state freshman admissions 2019-21.</a>"
     )
     .style("margin", "5px 0 0 0");
+
+  container
+    .append("p")
+    .style("font-size", "12pt")
+    .style("line-height", "normal")
+    .style("font-family", "Helvetica Neue, Helvetica, Arial, sans-serif")
+    .style("letter-spacing", "0px")
+    .html("<i>Chart: Alex Rudolph / Daily Nexus</i>")
+    .style("margin", 0);
 };
