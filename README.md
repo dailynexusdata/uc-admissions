@@ -1,5 +1,6 @@
-https://www.ucop.edu/institutional-research-academic-planning/content-analysis/ug-admissions/ug-pages/admissions.html
+# UCs Release Admission Statistics for Incoming Class
 
-https://www.ucop.edu/institutional-research-academic-planning/_files/factsheets/2021/fall-2021-admission-table-1-1.pdf
+Read the article [Here](https://dailynexus.com/2021-07-20/ucs-release-admission-statistics-for-incoming-class/)!
 
-https://www.ucop.edu/institutional-research-academic-planning/_files/factsheets/2021/fall-2021-admission-table-2-2.pdf
+These plots look at [UC admission data from 2019-2021](
+https://www.ucop.edu/institutional-research-academic-planning/content-analysis/ug-admissions/ug-pages/admissions.html).
